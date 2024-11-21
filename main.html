@@ -1,0 +1,257 @@
+<!--   F A T U R A   F O R M U   -->
+<!DOCTYPE html>
+<html lang="tr">
+
+<!-- H e a d -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Onur Doğan">
+    <meta name="description" content="Fatura Formu">
+    <title>Fatura Formu</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet"> <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"> <!-- Inter -->
+</head>
+
+<!-- B o d y -->
+<body>
+    <!-- Ana Form -->
+    <div style="display: flex; justify-content: space-between;">
+        <div style="width: 50%; margin: 5px;">
+            <div class="container" style="display: flex; text-align: center;">
+                <div class="container-sira"
+                    style="flex: 0 0 10%; border: 1px dashed; margin-right: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                    <p class="sira" style="margin: 0; font-style: italic;">Sıra</p>
+                </div>
+                <div class="main-content" style="flex: 1;">
+                    <div class="container-baslik" style="border: 1px dashed; margin-bottom: 10px;">
+                        <p class="baslik" style=" font-size: 1.1em;">Vergi İadesine Esas Belgenin</p>
+                    </div>
+                    <div class="container-alt-basliklar" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                        <div class="detail-box" style="flex: 2; border: 1px dashed; margin-right: 10px;">
+                            <p class="tarih">Tarihi</p>
+                        </div>
+                        <div class="detail-box" style="flex: 1; border: 1px dashed; margin-right: 10px;">
+                            <p class="no">No</p>
+                        </div>
+                        <div class="detail-box" style="flex: 5; border: 1px dashed; margin-right: 10px;">
+                            <p class="kisi">Kimden Alındığı</p>
+                        </div>
+                        <div class="detail-box" style="flex: 2; border: 1px dashed; margin-right: 10px;">
+                            <p class="vergi-turu">Türü</p>
+                        </div>
+                        <div class="detail-box" style="flex: 2; border: 1px dashed;">
+                            <p class="tutar">Tutarı</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dynamic-rows-container-left"></div>
+            <div style="justify-content: flex-end; margin-top: 10px;">
+                <div style="display: flex; align-items: stretch;">
+                    <div class="detail-box"
+                        style="flex: 86%; border: 1px dashed; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                        <p>TOPLAM</p>
+                    </div>
+                    <div class="detail-box" style="flex: 14%; border: 1px solid; display: flex;">
+                        <input type="text" id="toplam-left" name="toplam-left"
+                            style="width: 100%; box-sizing: border-box; border: none;text-align: center; padding: 5px; margin: 0; font-size: 16px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 50%; margin: 5px;">
+            <div class="container" style="display: flex; text-align: center;">
+                <div class="container-sira"
+                    style="flex: 0 0 10%; border: 1px dashed; margin-right: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                    <p class="sira" style="margin: 0; font-style: italic;">Sıra</p>
+                </div>
+                <div class="main-content" style="flex: 1;">
+                    <div class="container-baslik" style="border: 1px dashed; margin-bottom: 10px;">
+                        <p class="baslik" style=" font-size: 1.1em;">Vergi İadesine Esas Belgenin</p>
+                    </div>
+                    <div class="container-alt-basliklar" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                        <div class="detail-box" style="flex: 2; border: 1px dashed; margin-right: 10px;">
+                            <p class="tarih">Tarihi</p>
+                        </div>
+                        <div class="detail-box" style="flex: 1; border: 1px dashed; margin-right: 10px;">
+                            <p class="no">No</p>
+                        </div>
+                        <div class="detail-box" style="flex: 5; border: 1px dashed; margin-right: 10px;">
+                            <p class="kisi">Kimden Alındığı</p>
+                        </div>
+                        <div class="detail-box" style="flex: 2; border: 1px dashed; margin-right: 10px;">
+                            <p class="vergi-turu">Türü</p>
+                        </div>
+                        <div class="detail-box" style="flex: 2; border: 1px dashed;">
+                            <p class="tutar">Tutarı</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dynamic-rows-container-right"></div>
+            <div style="justify-content: flex-end; margin-top: 10px;">
+                <div style="display: flex; align-items: stretch;">
+                    <div class="detail-box"
+                        style="flex: 86%; border: 1px dashed; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                        <p>TOPLAM</p>
+                    </div>
+                    <div class="detail-box" style="flex: 14%; border: 1px solid; display: flex;">
+                        <input type="text" id="toplam-right" name="toplam-right"
+                            style="width: 100%; box-sizing: border-box; border: none;text-align: center; padding: 5px; margin: 0; font-size: 16px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+
+    <!-- ayraç -->
+    <hr style="border: 1px solid; width: 100%; margin: 10px 0;">
+
+    <!-- Son Toplamlar -->
+    <div style="display: flex; justify-content: space-between;">
+        <div style="width: 50%; margin: 5px;">
+            <div style="display: flex; align-items: stretch; margin-bottom: 10px;">
+                <div class="detail-box"
+                    style="flex: 72%; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px dashed; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <p>Adet</p>
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px dashed; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <p>Tutar</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: stretch; margin-bottom: 10px; height: 40px;">
+                <div class="detail-box"
+                    style="flex: 72%; margin-right: 10px; border: 1px dashed; display: flex; align-items: center; justify-content: flex-start;">
+                    <p style="margin-left: 10px; font-size: 1.1em;">Genel Toplam</p>
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="genel-toplam-adet" name="genel-toplam-adet"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="genel-toplam-tutar" name="genel-toplam-tutar"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+            </div>
+            <div style="display: flex; align-items: stretch; margin-bottom: 10px; height: 40px;">
+                <div class="detail-box"
+                    style="flex: 72%; margin-right: 10px; border: 1px dashed; display: flex; align-items: center; justify-content: flex-start;">
+                    <p style="margin-left: 10px; font-size: 1.1em;">Eğitim</p>
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="egitim-adet" name="egitim-adet"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="egitim-tutar" name="egitim-tutar"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+            </div>
+            <div style="display: flex; align-items: stretch; margin-bottom: 10px; height: 40px;">
+                <div class="detail-box"
+                    style="flex: 72%; margin-right: 10px; border: 1px dashed; display: flex; align-items: center; justify-content: flex-start;">
+                    <p style="margin-left: 10px; font-size: 1.1em;">Temizlik</p>
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="temizlik-adet" name="temizlik-adet"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="temizlik-tutar" name="temizlik-tutar"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+            </div>
+            <div style="display: flex; align-items: stretch; margin-bottom: 10px; height: 40px;">
+                <div class="detail-box"
+                    style="flex: 72%; margin-right: 10px; border: 1px dashed; display: flex; align-items: center; justify-content: flex-start;">
+                    <p style="margin-left: 10px; font-size: 1.1em;">Sağlık</p>
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="saglik-adet" name="saglik-adet"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="saglik-tutar" name="saglik-tutar"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+            </div>
+            <div style="display: flex; align-items: stretch; margin-bottom: 10px; height: 40px;">
+                <div class="detail-box"
+                    style="flex: 72%; margin-right: 10px; border: 1px dashed; display: flex; align-items: center; justify-content: flex-start;">
+                    <p style="margin-left: 10px; font-size: 1.1em;">Gıda</p>
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="gida-adet" name="gida-adet"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="gida-tutar" name="gida-tutar"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+            </div>
+            <div style="display: flex; align-items: stretch; margin-bottom: 10px; height: 40px;">
+                <div class="detail-box"
+                    style="flex: 72%; margin-right: 10px; border: 1px dashed; display: flex; align-items: center; justify-content: flex-start;">
+                    <p style="margin-left: 10px; font-size: 1.1em;">Giyim</p>
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="giyim-adet" name="giyim-adet"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="giyim-tutar" name="giyim-tutar"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+            </div>
+            <div style="display: flex; align-items: stretch; height: 40px; margin-bottom: 10px;">
+                <div class="detail-box"
+                    style="flex: 72%; margin-right: 10px; border: 1px dashed; display: flex; align-items: center; justify-content: flex-start;">
+                    <p style="margin-left: 10px; font-size: 1.1em;">Kira</p>
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="kira-adet" name="kira-adet"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+                <div class="detail-box"
+                    style="flex: 14%; border: 1px solid; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                    <input type="text" id="kira-tutar" name="kira-tutar"
+                        style="width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: center; padding: 0; margin: 0; font-size: 1.1em;">
+                </div>
+            </div>
+            <form id="faturaForm">
+                <div style="display: flex; justify-content: flex-end;">
+                    <input type="button" value="Aktar" onclick="saveData()" style="display: flex; width: 100%;font-size: 1em; height: 40px;margin-right: 10px;">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
